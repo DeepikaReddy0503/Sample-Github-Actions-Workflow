@@ -17,6 +17,13 @@ jobs:
             - name: "Running on master/test push" # step 1
               run: echo "Running on master/test push"
 
+    on-pull-request-opened:
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request opened"
+              run: echo "Running on pull request opened"
+
     on-pull-request: # Job 2
         if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
