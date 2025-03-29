@@ -7,6 +7,8 @@ on:
     pull_request: # Event: Whenever a pull request is made to the repository
         branches:
             - master
+        types:
+            - closed
     workflow_dispatch: 
 
 jobs:
@@ -30,4 +32,3 @@ jobs:
         steps: # Steps to be executed in the job
             - name: "Running on workflow dispatch"
               run: echo "Running on workflow dispatch"
-                      
